@@ -3,7 +3,7 @@ Simulation Support in PhotonLib
 
 What Is Supported?
 ------------------
-PhotonLib supports simulation of a Photon Vision camera and processor moving about a field on a robot. 
+PhotonLib supports simulation of a Photon Vision camera and processor moving about a field on a robot.
 
 You can use this to help validate your robot code's behavior in simulation without special wrappers or additional hardware.
 
@@ -27,15 +27,15 @@ It requires a number of pieces of configuration to accurately simulate your phys
         int camResolutionWidth = 480; // pixels
         double minTargetArea = 10; // square pixels
 
-        var simVision = new SimVisionSystem(camName, 
-                                            cameDiagFOV, 
-                                            camPitch, 
-                                            robotToCamera, 
-                                            camHeightOffGround, 
-                                            maxLEDRange, 
-                                            maxLEDRange, 
-                                            camResolutionHeight, 
-                                            camResolutionWidth, 
+        var simVision = new SimVisionSystem(camName,
+                                            cameDiagFOV,
+                                            camPitch,
+                                            robotToCamera,
+                                            camHeightOffGround,
+                                            maxLEDRange,
+                                            maxLEDRange,
+                                            camResolutionHeight,
+                                            camResolutionWidth,
                                             minTargetArea);
 
    .. code-tab:: c++
@@ -52,15 +52,15 @@ It requires a number of pieces of configuration to accurately simulate your phys
         int camResolutionWidth = 480;  // pixels
         double minTargetArea = 10;     // square pixels
 
-        photonlib::SimVisionSystem simVision(camName, 
-                                             cameDiagFOV, 
-                                             camPitch, 
-                                             robotToCamera, 
-                                             camHeightOffGround, 
-                                             maxLEDRange, 
-                                             maxLEDRange, 
-                                             camResolutionHeight, 
-                                             camResolutionWidth, 
+        photonlib::SimVisionSystem simVision(camName,
+                                             cameDiagFOV,
+                                             camPitch,
+                                             robotToCamera,
+                                             camHeightOffGround,
+                                             maxLEDRange,
+                                             maxLEDRange,
+                                             camResolutionHeight,
+                                             camResolutionWidth,
                                              minTargetArea);
 
 
@@ -74,8 +74,8 @@ After declaring the system, you should create and add one ``SimVisionTarget`` pe
         double targetWidth = 0.54; // meters
         double targetHeight = 0.25; // meters
 
-        var newTgt = new SimVisionTarget(targetPose, 
-                                         targetHeightAboveGround, 
+        var newTgt = new SimVisionTarget(targetPose,
+                                         targetHeightAboveGround,
                                          targetWidth,
                                          targetHeight);
 
@@ -88,8 +88,8 @@ After declaring the system, you should create and add one ``SimVisionTarget`` pe
         units::meter_t targetWidth (0.54);
         units::meter_t targetHeight (0.25);
 
-        photonlib::SimVisionTarget newTgt (targetPose, 
-                                           targetHeightAboveGround, 
+        photonlib::SimVisionTarget newTgt (targetPose,
+                                           targetHeightAboveGround,
                                            targetWidth,
                                            targetHeight);
 
@@ -124,7 +124,7 @@ Targets are considered in view if:
 3) The target's in-image pixel size is greater than ``minTargetArea``
 4) The distance from the camera to the target is less than ``maxLEDRange``
 
-Only the Raw Bytes network tables object is updated in network tables currently. Actual camera images are not simulated. 
+Only the Raw Bytes network tables object is updated in network tables currently. Actual camera images are not simulated.
 
 Latency of processing is not yet modeled.
 
@@ -133,7 +133,7 @@ Raw-Data Approach
 
 Advanced users may wish to directly provide target information based on an existing detailed simulation.
 
-A ``SimPhotonCamera`` can be created for this purpose. It provides an interface where the user can supply target data via a list of ``PhotonTrackedTarget`` objects. 
+A ``SimPhotonCamera`` can be created for this purpose. It provides an interface where the user can supply target data via a list of ``PhotonTrackedTarget`` objects.
 
 .. tabs::
    .. code-tab:: java
