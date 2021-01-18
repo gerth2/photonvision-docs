@@ -9,7 +9,7 @@ Knowledge and Equipment Needed
 Background
 ----------
 
-Full code may be found in the PhotonLib example repository (:ref:`Java <https://github.com/PhotonVision/photonlib-examples/tree/master/java/sim-aim-and-range TODO FIX ME>`).
+Full code may be found in the PhotonLib example repository (:ref:`Java <https://www.google.com/search?q=TODO+FIXME>`).
 
 The previous examples show how to run PhotonVision on a real robot, with a physical robot drivetrain moving around and interacting with the software.
 
@@ -42,7 +42,7 @@ First, in `Robot.java`, we add support to instantiate a new simulation-specific 
           :code:`// Coming Soon!`
 
 
-Then, we add in the implementation of our new `DrivetrainSim` class. Please reference the :ref:`WPILib documentation on doing drivetrain simulation <TODO LINK ME>`.
+Then, we add in the implementation of our new `DrivetrainSim` class. Please reference the :ref:`WPILib documentation on doing drivetrain simulation <https://www.google.com/search?q=TODO+FIXME>`.
 
 Simulated Vision support is added with the following steps:
 
