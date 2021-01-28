@@ -4,9 +4,9 @@ Using WPILib Pose Estimation, Simulation, and PhotonVision Together
 Background
 ----------
 
-Full code may be found in the PhotonLib example repository (:ref:`Java <https://www.google.com/search?q=TODO+FIXME>`).
+Full code may be found in the PhotonLib repository (`Java <https://github.com/PhotonVision/photonvision/tree/master/photonlib-java-examples/src/main/java/org/photonlib/examples/simposeest>`_).
 
-This example builds upon WPILib's :ref:`Differential Drive Pose Estimator <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator>`. It adds a :code:`PhotonCamera` to gather estimates of the robot's position on the field. This in turn can be used for aligning with vision targets, and increasing accuracy of autonomous routines.
+This example builds upon WPILib's `Differential Drive Pose Estimator <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator>`_. It adds a :code:`PhotonCamera` to gather estimates of the robot's position on the field. This in turn can be used for aligning with vision targets, and increasing accuracy of autonomous routines.
 
 To support simulation, a :code:`SimVisionSystem` is used to drive data into the :code:`PhotonCamera`. The far high goal target from 2020 is modeled.
 
@@ -18,7 +18,7 @@ WPILib's :code:`Pose2d` class is used to represent robot positions on the field.
 Three different :code:`Pose2d` positions are relevant for this example:
 
 1) Desired Pose: The location the some autonomous routine wants the robot to be in.
-2) Estimated Pose: The location the software `believes` the robot to be in, based on motor outputs and sensor feedback.
+2) Estimated Pose: The location the software `believes` the robot to be in, based on physics models and sensor feedback.
 3) Actual Pose: The locations he robot is actually at. The physics simulation generates this in simulation, but it cannot be directly measured on the real robot.
 
 Estimating Pose
@@ -26,7 +26,7 @@ Estimating Pose
 
 The :code:`DrivetrainPoseEstimator` class is responsible for generating an estimated robot pose using sensor readings (including PhotonVision).
 
-Please reference the :ref:`WPILib documentation <https://www.google.com/search?q=TODO+FIXME>` on using the :code:`DifferentialDrivePoseEstimator` class. 
+Please reference the `WPILib documentation <https://docs.wpilib.org/en/stable/docs/software/advanced-controls/state-space/state-space-pose_state-estimators.html>`_ on using the :code:`DifferentialDrivePoseEstimator` class.
 
 Specifically, to incorporate Photon Vision, we need to create a :code:`PhotonCamera`:
 
@@ -34,7 +34,7 @@ Specifically, to incorporate Photon Vision, we need to create a :code:`PhotonCam
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/gerth2/photonvision/add-basic-sim/photonlib-java-examples/src/main/java/org/photonlib/examples/simposeest/robot/DrivetrainPoseEstimator.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/PhotonVision/photonvision/master/photonlib-java-examples/src/main/java/org/photonlib/examples/simposeest/robot/DrivetrainPoseEstimator.java
       :language: java
       :lines: 43-43
       :linenos:
@@ -51,7 +51,7 @@ Then, during periodic execution, we read back results. If we see a target in the
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/gerth2/photonvision/add-basic-sim/photonlib-java-examples/src/main/java/org/photonlib/examples/simposeest/robot/DrivetrainPoseEstimator.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/PhotonVision/photonvision/master/photonlib-java-examples/src/main/java/org/photonlib/examples/simposeest/robot/DrivetrainPoseEstimator.java
       :language: java
       :lines: 81-88
       :linenos:
@@ -72,7 +72,7 @@ First, we create a new :code:`SimVisionSystem` to represent our camera and copro
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/gerth2/photonvision/add-basic-sim/photonlib-java-examples/src/main/java/org/photonlib/examples/simposeest/sim/DrivetrainSim.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/PhotonVision/photonvision/master/photonlib-java-examples/src/main/java/org/photonlib/examples/simposeest/sim/DrivetrainSim.java
       :language: java
       :lines: 71-93
       :linenos:
@@ -88,7 +88,7 @@ Next, we create objects to represent the physical location and size of the visio
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/gerth2/photonvision/add-basic-sim/photonlib-java-examples/src/main/java/org/photonlib/examples/simposeest/robot/Constants.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/PhotonVision/photonvision/master/photonlib-java-examples/src/main/java/org/photonlib/examples/simposeest/robot/Constants.java
       :language: java
       :lines: 66-95
       :linenos:
@@ -104,7 +104,7 @@ Finally, we add our target to the simulated vision system.
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/gerth2/photonvision/add-basic-sim/photonlib-java-examples/src/main/java/org/photonlib/examples/simposeest/sim/DrivetrainSim.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/PhotonVision/photonvision/master/photonlib-java-examples/src/main/java/org/photonlib/examples/simposeest/sim/DrivetrainSim.java
       :language: java
       :lines: 95-95
       :linenos:
@@ -126,7 +126,7 @@ Once we have all the properties of our simulated vision system defined, the work
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/gerth2/photonvision/add-basic-sim/photonlib-java-examples/src/main/java/org/photonlib/examples/simposeest/sim/DrivetrainSim.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/PhotonVision/photonvision/master/photonlib-java-examples/src/main/java/org/photonlib/examples/simposeest/sim/DrivetrainSim.java
       :language: java
       :lines: 136-137
       :linenos:

@@ -9,7 +9,7 @@ Knowledge and Equipment Needed
 Background
 ----------
 
-Full code may be found in the PhotonLib example repository (:ref:`Java <https://www.google.com/search?q=TODO+FIXME>`).
+Full code may be found in the PhotonLib repository (`Java <https://github.com/PhotonVision/photonvision/tree/master/photonlib-java-examples/src/main/java/org/photonlib/examples/simaimandrange>`_/`C++ <https://github.com/PhotonVision/photonvision/tree/master/photonlib-cpp-examples/src/main/cpp/examples/simaimandrange>`_).
 
 The previous examples show how to run PhotonVision on a real robot, with a physical robot drivetrain moving around and interacting with the software.
 
@@ -25,13 +25,13 @@ This example builds upon that, adding support for simulating robot motion and in
 Walkthrough
 -----------
 
-First, in `Robot.java`, we add support to instantiate a new simulation-specific object and update it periodically. This logic only gets used while running in simulation:
+First, in the main :code:`Robot` source file, we add support to periodically update a new simulation-specific object. This logic only gets used while running in simulation:
 
 .. tabs::
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/gerth2/photonvision/add-basic-sim/photonlib-java-examples/src/main/java/org/photonlib/examples/simaimandrange/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/PhotonVision/photonvision/master/photonlib-java-examples/src/main/java/org/photonlib/examples/simaimandrange/Robot.java
       :language: java
       :lines: 109-123
       :linenos:
@@ -39,10 +39,13 @@ First, in `Robot.java`, we add support to instantiate a new simulation-specific 
 
   .. group-tab:: C++
 
-          :code:`// Coming Soon!`
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/PhotonVision/photonvision/master/photonlib-cpp-examples/src/main/cpp/examples/simaimandrange/cpp/Robot.cpp
+      :language: c++
+      :lines: 64-66
+      :linenos:
+      :lineno-start: 64
 
-
-Then, we add in the implementation of our new `DrivetrainSim` class. Please reference the :ref:`WPILib documentation on doing drivetrain simulation <https://www.google.com/search?q=TODO+FIXME>`.
+Then, we add in the implementation of our new `DrivetrainSim` class. Please reference the `WPILib documentation on physics simulation <https://docs.wpilib.org/en/stable/docs/software/wpilib-tools/robot-simulation/physics-sim.html>`_.
 
 Simulated Vision support is added with the following steps:
 
@@ -55,7 +58,7 @@ First, we create a new :code:`SimVisionSystem` to represent our camera and copro
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/gerth2/photonvision/add-basic-sim/photonlib-java-examples/src/main/java/org/photonlib/examples/simaimandrange/sim/DrivetrainSim.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/PhotonVision/photonvision/master/photonlib-java-examples/src/main/java/org/photonlib/examples/simaimandrange/sim/DrivetrainSim.java
       :language: java
       :lines: 66-88
       :linenos:
@@ -63,7 +66,12 @@ First, we create a new :code:`SimVisionSystem` to represent our camera and copro
 
   .. group-tab:: C++
 
-          :code:`// Coming Soon!`
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/PhotonVision/photonvision/master/photonlib-cpp-examples/src/main/cpp/examples/simaimandrange/include/DrivetrainSim.h
+      :language: c++
+      :lines: 72-92
+      :linenos:
+      :lineno-start: 72
+
 
 Next, we create objects to represent the physical location and size of the vision targets we are calibrated to detect. This example models the down-field high goal vision target from the 2020 and 2021 games.
 
@@ -71,7 +79,7 @@ Next, we create objects to represent the physical location and size of the visio
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/gerth2/photonvision/add-basic-sim/photonlib-java-examples/src/main/java/org/photonlib/examples/simaimandrange/sim/DrivetrainSim.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/PhotonVision/photonvision/master/photonlib-java-examples/src/main/java/org/photonlib/examples/simaimandrange/sim/DrivetrainSim.java
       :language: java
       :lines: 89-102
       :linenos:
@@ -79,7 +87,11 @@ Next, we create objects to represent the physical location and size of the visio
 
   .. group-tab:: C++
 
-          :code:`// Coming Soon!`
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/PhotonVision/photonvision/master/photonlib-cpp-examples/src/main/cpp/examples/simaimandrange/include/DrivetrainSim.h
+      :language: c++
+      :lines: 94-103
+      :linenos:
+      :lineno-start: 94
 
 Finally, we add our target to the simulated vision system.
 
@@ -87,7 +99,7 @@ Finally, we add our target to the simulated vision system.
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/gerth2/photonvision/add-basic-sim/photonlib-java-examples/src/main/java/org/photonlib/examples/simaimandrange/sim/DrivetrainSim.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/PhotonVision/photonvision/master/photonlib-java-examples/src/main/java/org/photonlib/examples/simaimandrange/sim/DrivetrainSim.java
       :language: java
       :lines: 107-108
       :linenos:
@@ -95,7 +107,11 @@ Finally, we add our target to the simulated vision system.
 
   .. group-tab:: C++
 
-          :code:`// Coming Soon!`
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/PhotonVision/photonvision/master/photonlib-cpp-examples/src/main/cpp/examples/simaimandrange/include/DrivetrainSim.h
+      :language: c++
+      :lines: 41
+      :linenos:
+      :lineno-start: 41
 
 If you have additional targets you want to detect, you can add them in the same way as the first one.
 
@@ -109,7 +125,7 @@ Once we have all the properties of our simulated vision system defined, the work
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/gerth2/photonvision/add-basic-sim/photonlib-java-examples/src/main/java/org/photonlib/examples/simaimandrange/sim/DrivetrainSim.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/PhotonVision/photonvision/master/photonlib-java-examples/src/main/java/org/photonlib/examples/simaimandrange/sim/DrivetrainSim.java
       :language: java
       :lines: 131-132
       :linenos:
@@ -117,6 +133,10 @@ Once we have all the properties of our simulated vision system defined, the work
 
   .. group-tab:: C++
 
-          :code:`// Coming Soon!`
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/PhotonVision/photonvision/master/photonlib-cpp-examples/src/main/cpp/examples/simaimandrange/cpp/sim/DrivetrainSim.cpp
+      :language: c++
+      :lines: 39-40
+      :linenos:
+      :lineno-start: 39
 
 The rest is done behind the scenes.
