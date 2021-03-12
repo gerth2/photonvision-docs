@@ -4,7 +4,7 @@ Simulating Aiming and Getting in Range
 Knowledge and Equipment Needed
 -----------------------------------------------
 
-- Everything required in :ref:`Combining Aiming and Getting in Range <docs/programming/examples/aimandrange:Knowledge and Equipment Needed>`.
+- Everything required in :ref:`Combining Aiming and Getting in Range <docs/examples/aimandrange:Knowledge and Equipment Needed>`.
 
 Background
 ----------
